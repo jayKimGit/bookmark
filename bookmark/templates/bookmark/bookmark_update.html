@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Bookmarks Update{% endblock %}
+{% block content %}
+<form action="" method="post">
+    <!-- // # cross-site script prevention // -->
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-success" value="write">
+</form>
+{% endblock %}

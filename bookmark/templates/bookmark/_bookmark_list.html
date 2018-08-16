@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Bookmark List{% endblock %}
+{% block content %}
+<!-- //
+template syntax
+{ %  % } : 기능태그
+{ {  } } : 출력태그
+// -->
+<table>
+    <tbody>
+    {% for bookmark in object_list %}
+    <tr>
+        <td>
+    {{ forloop.counter }}
+        </td>
+        <td>
+    {{ bookmark.site_name }}
+        </td>
+        <td>
+            <a href="{{ bookmark.url }}" target="_blank" class="btn btn-success">{{ bookmark.url }}</a>
+        </td>
+    </tr>
+
+    {%  endfor %}
+    </tbody>
+</table>
+{% endblock %}
